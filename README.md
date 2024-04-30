@@ -62,8 +62,6 @@ To run this program, you need:
 - If the `status` is `0`, the thumbnail is downloaded successfully, and a success message is printed.
 - If the `status` is non-zero, indicating an error, a failure message is printed.
 
-**Program Termination:**
-- The program exits with a return code of 0 on successful execution and a non-zero code otherwise.
-```
+
 
 
