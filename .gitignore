@@ -1,32 +1,32 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include <string>
+#include <cstdlib> 
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+int main() {
+    
+    cout << "Enter the YouTube video ID: ";
+    string video_id;
+    getline(cin, video_id);
+    
+    string thumbnail_url = "https://img.youtube.com/vi/" + video_id + "/maxresdefault.jpg";
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+  
+    string output_file = "thumbnail1.jpg";
 
-# Fortran module files
-*.mod
-*.smod
+  
+    string command = "wget -O " + output_file + " " + thumbnail_url;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    int status = system(command.c_str());
+    
 
-# Executables
-*.exe
-*.out
-*.app
+    if (status == 0) {
+        cout << "Thumbnail downloaded successfully!" << endl;
+    } else {
+        cout << "Failed to download thumbnail" << endl;
+    }
+
+    return 0;
+}
+
